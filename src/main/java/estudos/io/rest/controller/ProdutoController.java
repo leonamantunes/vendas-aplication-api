@@ -30,7 +30,7 @@ public class ProdutoController {
         return produtos.save(produto);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(NO_CONTENT)
     public void update(@PathVariable Integer id, @RequestBody Produto produto){
         produtos
@@ -44,7 +44,7 @@ public class ProdutoController {
                                 "Produto não Encontrado."));
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/{id}")
     @ResponseStatus(NO_CONTENT)
     public void delete(@PathVariable Integer id){
         produtos
@@ -57,7 +57,7 @@ public class ProdutoController {
                                 "Produto não Encontrado."));
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     @ResponseStatus(NO_CONTENT)
     public Produto getById(@PathVariable Integer id){
         return produtos

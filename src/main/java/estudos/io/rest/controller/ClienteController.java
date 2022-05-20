@@ -24,7 +24,7 @@ public class ClienteController {
         this.clientes = clientes;
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Cliente getClienteById( @PathVariable Integer id ){
         return clientes
                 .findById(id)
@@ -39,7 +39,7 @@ public class ClienteController {
         return clientes.save(cliente);
     }
 
-    @DeleteMapping( "{id}")
+    @DeleteMapping( "/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void delete(@PathVariable Integer id){
         clientes.findById(id)
@@ -53,7 +53,7 @@ public class ClienteController {
 
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public  void update (@PathVariable Integer id,
                          @RequestBody Cliente cliente){
